@@ -1,0 +1,18 @@
+{
+  "name": "claude-kit",
+  "description": "A curated collection of Claude Code plugins for common development workflows",
+  "owner": "bardin08",
+  "repository": "https://github.com/bardin08/claude-kit",
+  "license": "MIT",
+  "plugins": [
+    {
+      "name": "otto-kit",
+      "description": "OTTO — Open Toolchain & Task Orchestrator. Bootstrap project-specific slash commands, agents, and conventions by detecting tech stack and architecture.",
+      "version": "0.1.0",
+      "source": "./plugins/otto-kit",
+      "author": "bardin08",
+      "tags": ["project-setup", "scaffolding", "conventions", "agents-md", "planning", "task-management"],
+      "category": "general"
+    }
+  ]
+}
