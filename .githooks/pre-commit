@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Pre-commit hook: validate marketplace and plugin structure.
+# Install: git config core.hooksPath .githooks
+
+exec ./scripts/validate.sh
