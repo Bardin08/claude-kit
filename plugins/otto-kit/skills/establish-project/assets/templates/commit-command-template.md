@@ -1,0 +1,40 @@
+---
+description: Create a commit following {PROJECT_NAME} conventions
+allowed-tools: Bash, Read, Grep
+user-invocable: true
+---
+
+# Commit
+
+Create a well-formatted commit for staged changes.
+
+## Convention
+
+{COMMIT_FORMAT_DESCRIPTION}
+
+Examples from this project's history:
+{COMMIT_EXAMPLES}
+
+## Steps
+
+1. Run `git status` to see staged and unstaged changes.
+2. Run `git diff --cached` to review what's staged.
+3. If nothing is staged, show unstaged changes and ask what to stage.
+   Stage specific files by name — never use `git add -A` or `git add .`.
+4. Run `git log --oneline -5` to see recent style for reference.
+5. Analyze the staged diff and draft a commit message following the convention above.
+6. Present the message to the user for approval or editing.
+{IF PRE_COMMIT_CHECKS}
+7. Run pre-commit checks: `{PRE_COMMIT_CHECKS}`
+   If they fail, show the output and fix issues before retrying.
+{END IF}
+8. Create the commit with the approved message.
+9. Show `git log -1` to confirm.
+
+## Rules
+
+- Never amend previous commits unless the user explicitly asks.
+- Never force push.
+- Never skip pre-commit hooks (no `--no-verify`).
+- Never add AI co-author lines.
+- If changes span multiple unrelated concerns, suggest splitting into separate commits.
