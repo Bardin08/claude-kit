@@ -77,8 +77,14 @@ for SOURCE in $PLUGINS; do
 
   # Check that declared component directories exist
   for COMPONENT in commands skills agents hooks; do
-    if jq -e ".components.$COMPONENT" "$PLUGIN_DIR/.claude-plugin/plugin.json" > /dev/null 2>&1; then
-      DIRS=$(jq -r ".components.$COMPONENT[]" "$PLUGIN_DIR/.claude-plugin/plugin.json")
+    if jq -e ".$COMPONENT" "$PLUGIN_DIR/.claude-plugin/plugin.json" > /dev/null 2>&1; then
+      COMPONENT_VALUE=$(jq -r ".$COMPONENT" "$PLUGIN_DIR/.claude-plugin/plugin.json")
+      # Handle both string and array values
+      if jq -e ".$COMPONENT | type == \"array\"" "$PLUGIN_DIR/.claude-plugin/plugin.json" > /dev/null 2>&1; then
+        DIRS=$(jq -r ".$COMPONENT[]" "$PLUGIN_DIR/.claude-plugin/plugin.json")
+      else
+        DIRS="$COMPONENT_VALUE"
+      fi
       for DIR in $DIRS; do
         FULL_PATH="$PLUGIN_DIR/${DIR#./}"
         if [ ! -d "$FULL_PATH" ]; then

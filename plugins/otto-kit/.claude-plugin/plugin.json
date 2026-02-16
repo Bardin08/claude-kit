@@ -6,9 +6,7 @@
     "name": "bardin08"
   },
   "license": "MIT",
-  "components": {
-    "commands": ["./commands"],
-    "skills": ["./skills"],
-    "agents": ["./agents"]
-  }
+  "commands": ["./commands"],
+  "skills": ["./skills"],
+  "agents": ["./agents"]
 }

@@ -149,11 +149,11 @@ All checks must pass before merge.
      "name": "plugin-name",
      "description": "Brief description",
      "version": "0.1.0",
-     "author": "github-username",
+     "author": {
+       "name": "github-username"
+     },
      "license": "MIT",
-     "components": {
-       "commands": ["./commands"]
-     }
+     "commands": ["./commands"]
    }
    ```
 4. Add commands or skills in declared component directories
