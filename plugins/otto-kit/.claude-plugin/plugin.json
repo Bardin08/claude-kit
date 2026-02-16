@@ -2,7 +2,9 @@
   "name": "otto-kit",
   "description": "OTTO — Open Toolchain & Task Orchestrator. Bootstrap project-specific slash commands, agents, and conventions by detecting tech stack and architecture.",
   "version": "0.1.0",
-  "author": "bardin08",
+  "author": {
+    "name": "bardin08"
+  },
   "license": "MIT",
   "components": {
     "commands": ["./commands"],
