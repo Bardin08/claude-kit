@@ -5,8 +5,5 @@
   "author": {
     "name": "bardin08"
   },
-  "license": "MIT",
-  "commands": ["./commands"],
-  "skills": ["./skills"],
-  "agents": ["./agents"]
+  "license": "MIT"
 }
